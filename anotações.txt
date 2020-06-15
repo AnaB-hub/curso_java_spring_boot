@@ -45,7 +45,9 @@ Merge request: é uma requisição para que o cod de nossa branch seja enviado,
 atualizado na develop 
 
 =================================
-Aula
+Aula 73
+spring.datasource.url=jdbc:h2:file:C:/Users/ana.garcia/Desktop/UDEMY - JAVA/database
+CRIA UM ARQUIVO COM O NOME database NO CAMINHO INDICADO
 
 =================================
 Aula
