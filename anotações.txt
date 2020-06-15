@@ -36,6 +36,48 @@ Basicamente, git pull faz primeiro um git fetch seguido de um git merge
 origin/master." (explicação by https://metring.com.br/para-que-serve-o-git-fetch-vs-pull)
 
 =================================
+Aula 58
+git branch -D nome_da_branch : remove uma branch
+
+=================================
+Aula 62
+Merge request: é uma requisição para que o cod de nossa branch seja enviado, 
+atualizado na develop 
+
+=================================
+Aula
+
+=================================
+Aula
+
+=================================
+Aula
+
+=================================
+Aula
+
+=================================
+Aula
+
+=================================
+Aula
+
+=================================
+Aula
+
+=================================
+Aula
+
+=================================
+Aula
+
+=================================
+Aula
+
+=================================
+Aula
+
+=================================
 Aula
 
 =================================

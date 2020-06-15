@@ -22,6 +22,10 @@ public class CursoJavaSpringBootApplication implements CommandLineRunner {
 		Curso curso = new Curso();
 		String tst =  curso.mostraDados();
 		
+		Saudacao saudacao = new Saudacao();
+		String texto = saudacao.getSaudacao();
+		System.out.println(texto);
+		
 		LOG.info("Finalizando o run");
 		LOG.warn("Alerta no código");
 		LOG.error("Erro no código");
