@@ -1,0 +1,31 @@
+Aula 22
+syso: System.out.println
+f6: debug linha a linha
+f8: continua a execução até o próximo breakpoint ou até o final
+
+=================================
+Aula 25
+Botão direito no breakpoint => breakpoint properties => conditional
+
+=================================
+Aula 28
+f7: vc consegue saber quem chamou o método que esta parado o break
+
+=================================
+Aula 29
+
+Ctrl shift f: formatar código
+
+=================================
+Aula
+
+=================================
+Aula
+
+=================================
+Aula
+
+=================================
+Aula
+
+=================================
