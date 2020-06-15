@@ -29,7 +29,11 @@ git reset HEAD nome_do_arquivo : remove do stagging (deu git add antes,
 pq leva para o stagging)
 
 =================================
-Aula
+Aula 56
+git fetch : "O comando git fetch pode ser usado para baixar todos os commits do 
+repositório remoto sem afetar o seu código local.
+Basicamente, git pull faz primeiro um git fetch seguido de um git merge 
+origin/master." (explicação by https://metring.com.br/para-que-serve-o-git-fetch-vs-pull)
 
 =================================
 Aula
