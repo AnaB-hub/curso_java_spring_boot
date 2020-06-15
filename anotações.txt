@@ -13,14 +13,20 @@ f7: vc consegue saber quem chamou o método que esta parado o break
 
 =================================
 Aula 29
-
 Ctrl shift f: formatar código
 
 =================================
-Aula
+Aula 47
+
+git checkout nome_do_arquivo : retorna para a última versão, ou seja, 
+desfaz seu código nesse arquivo
+
+git checkout . : desfaz tudo
 
 =================================
-Aula
+Aula 48
+git reset HEAD nome_do_arquivo : remove do stagging (deu git add antes, 
+pq leva para o stagging)
 
 =================================
 Aula
