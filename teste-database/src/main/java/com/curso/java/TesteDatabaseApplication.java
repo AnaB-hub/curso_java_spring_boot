@@ -35,6 +35,12 @@ public class TesteDatabaseApplication implements CommandLineRunner {
 		cursoRepository.save(curso3);
 		cursoRepository.save(curso4);
 		cursoRepository.save(curso5);
+		
+		// Teste de data de atualização
+		Thread.sleep(3000);
+		curso5.setId(5); // TODO Verificar o motivo de não estar permitindo salvar sem o ID
+		curso5.setNome("TESTE ALTERAÇÃO");
+		cursoRepository.save(curso5);
 
 		// Alteração
 //		curso2.setId(2); // TODO Verificar o motivo de não estar permitindo salvar sem o ID
