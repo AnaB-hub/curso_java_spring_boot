@@ -2,8 +2,10 @@ package com.curso.java.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "curso_faculdade")
 public class Curso {
 
 	@Id
