@@ -20,11 +20,11 @@ public class TesteDatabaseApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		Curso curso2 = new Curso(4, "AGRO");
-		Curso curso1 = new Curso(67, "ADS");
+		Curso curso1 = new Curso(99, "ADS");
+		Curso curso2 = new Curso(6, "AGRO");
 		
-		cursoRepository.save(curso2);
 		cursoRepository.save(curso1);
+		cursoRepository.save(curso2);
 	}
 
 }

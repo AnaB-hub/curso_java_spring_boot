@@ -13,9 +13,10 @@ public class Curso {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(nullable = true)
 	private Integer id;
 
-	@Column(name = "nome_curso", nullable = false)
+	@Column(name = "nome_curso")
 	private String nome;
 
 	public Curso() {
