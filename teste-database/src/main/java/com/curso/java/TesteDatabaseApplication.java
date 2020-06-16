@@ -24,9 +24,13 @@ public class TesteDatabaseApplication implements CommandLineRunner{
 	public void run(String... args) throws Exception {
 		Curso curso1 = new Curso(99, "ADS");
 		Curso curso2 = new Curso(6, "AGRO");
+		Curso curso3 = new Curso(9, "LETRAS");
+		Curso curso4 = new Curso(66, "BLA");
 		
 		cursoRepository.save(curso1);
 		cursoRepository.save(curso2);
+		cursoRepository.save(curso3);
+		cursoRepository.save(curso4);
 		
 		curso2.setId(2); //TODO Verificar o motivo de não estar permitindo salvar sem o ID
 		curso2.setNome("AGRONEGÓCIO");
@@ -36,6 +40,11 @@ public class TesteDatabaseApplication implements CommandLineRunner{
 		cursos.forEach(curso -> System.out.println(curso));
 		
 		System.out.println("Qtde de registros: " + cursoRepository.count());
+		
+		cursoRepository.deleteById(3);
+		cursoRepository.delete(curso2); //Exclusão pela entidade
+		
+		System.out.println("Qtde de registros após a exclusão: " + cursoRepository.count());
 		
 	}
 
