@@ -25,6 +25,7 @@ public class ApiApplication implements CommandLineRunner {
 		Curso curso3 = new Curso(9, "LETRAS", "Humanas");
 		Curso curso4 = new Curso(66, "BLA graduação", "Humanas");
 		Curso curso5 = new Curso(60, "LALALA", "Humanas");
+		Curso curso6 = new Curso(65, "12312", "Humanas");
 
 		// Cadastro
 		cursoRepository.save(curso1);
@@ -32,6 +33,7 @@ public class ApiApplication implements CommandLineRunner {
 		cursoRepository.save(curso3);
 		cursoRepository.save(curso4);
 		cursoRepository.save(curso5);
+		cursoRepository.save(curso6);
 	}
 
 }
