@@ -1,5 +1,6 @@
 package com.curso.java.entities;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -10,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.PostPersist;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -37,12 +39,16 @@ public class Curso {
 	private LocalDateTime dataAtualizacao;
 
 	private String usuario;
-	
+
+	// Campos que não precisam ser salvos no BD
+	@Transient
+	private BigDecimal valorCurso;
+
 	@PostPersist
 	private void aposPersistirDados() {
 		this.nome = this.nome + " POST";
 	}
-	
+
 	@PrePersist
 	private void antesPersistirDados() {
 		this.usuario = "ADMIN";
@@ -119,6 +125,14 @@ public class Curso {
 
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
+	}
+
+	public BigDecimal getValorCurso() {
+		return valorCurso;
+	}
+
+	public void setValorCurso(BigDecimal valorCurso) {
+		this.valorCurso = valorCurso;
 	}
 
 }
