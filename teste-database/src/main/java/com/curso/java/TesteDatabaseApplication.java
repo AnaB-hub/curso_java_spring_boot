@@ -26,7 +26,7 @@ public class TesteDatabaseApplication implements CommandLineRunner {
 		Curso curso1 = new Curso(99, "Graduação ADS");
 		Curso curso2 = new Curso(6, "AGRO Graduação");
 		Curso curso3 = new Curso(9, "LETRAS");
-		Curso curso4 = new Curso(66, "BLA Graduação");
+		Curso curso4 = new Curso(66, "BLA graduação");
 		Curso curso5 = new Curso(60, "LALALA");
 
 		// Cadastro
@@ -44,32 +44,35 @@ public class TesteDatabaseApplication implements CommandLineRunner {
 		// Listagem
 		List<Curso> cursos = cursoRepository.findAll();
 		cursos.forEach(curso -> System.out.println(curso));
-
 		System.out.println("Qtde de registros: " + cursoRepository.count());
 
 		// Exclusão
-		cursoRepository.deleteById(3);
-		cursoRepository.delete(curso2); // Exclusão pela entidade
-
-		System.out.println("Qtde de registros após a exclusão: " + cursoRepository.count());
+//		cursoRepository.deleteById(3);
+//		cursoRepository.delete(curso2); // Exclusão pela entidade
+//		System.out.println("Qtde de registros após a exclusão: " + cursoRepository.count());
 
 		// FindById
-		Optional<Curso> byId = cursoRepository.findById(5);
-		Curso byIdFinal = byId.orElse(null);
-		System.out.println("Curso de ID 5: " + byIdFinal);
+//		Optional<Curso> byId = cursoRepository.findById(5);
+//		Curso byIdFinal = byId.orElse(null);
+//		System.out.println("Curso de ID 5: " + byIdFinal);
 
 		// FindByNome
-		List<Curso> cursosByNome = cursoRepository.findByNome("ADS");
-		System.out.println("Curso by nome");
-		cursosByNome.forEach(curso -> System.out.println(curso));
+//		List<Curso> cursosByNome = cursoRepository.findByNome("ADS");
+//		System.out.println("Curso by nome");
+//		cursosByNome.forEach(curso -> System.out.println(curso));
 
 		// FindByNome containing
-		List<Curso> cursosByNomeContaining = cursoRepository.findByNomeContaining("Graduação");
-		System.out.println("Curso by nome containing");
-		cursosByNomeContaining.forEach(curso -> System.out.println(curso));
+//		List<Curso> cursosByNomeContaining = cursoRepository.findByNomeContaining("Graduação");
+//		System.out.println("Curso by nome containing");
+//		cursosByNomeContaining.forEach(curso -> System.out.println(curso));
 
 		// FindByNome LIKE
-		List<Curso> cursosByNomeLike = cursoRepository.findByNomeLike("Graduação%");// RETORNA QUEM TEM "Graduação" NO INÍCIO
+//		List<Curso> cursosByNomeLike = cursoRepository.findByNomeLike("%Graduação%");// RETORNA QUEM TEM "Graduação" NO INÍCIO
+//		System.out.println("Curso by nome LIKE");
+//		cursosByNomeLike.forEach(curso -> System.out.println(curso));
+
+		// FindByNome LIKE IGNORE CASE
+		List<Curso> cursosByNomeLike = cursoRepository.findByNomeLikeIgnoreCase("%Graduação%");// IGNORA MAIUSCULAS E MINUSCULAS
 		System.out.println("Curso by nome LIKE");
 		cursosByNomeLike.forEach(curso -> System.out.println(curso));
 

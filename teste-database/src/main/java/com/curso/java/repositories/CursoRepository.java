@@ -13,5 +13,7 @@ public interface CursoRepository extends JpaRepository<Curso, Integer> {
 	List<Curso> findByNomeContaining(String nome);
 	
 	List<Curso> findByNomeLike(String nome);
+	
+	List<Curso> findByNomeLikeIgnoreCase(String nome);
 
 }
