@@ -1,5 +1,7 @@
 package com.curso.java;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -25,6 +27,11 @@ public class TesteDatabaseApplication implements CommandLineRunner{
 		
 		cursoRepository.save(curso1);
 		cursoRepository.save(curso2);
+		
+		List<Curso> cursos =  cursoRepository.findAll();
+		cursos.forEach(curso -> System.out.println(curso));
+		
+		System.out.println("Qtde de registros: " + cursoRepository.count());
 	}
 
 }
