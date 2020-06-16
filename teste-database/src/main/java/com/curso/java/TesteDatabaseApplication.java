@@ -10,8 +10,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.curso.java.entities.Aluno;
 import com.curso.java.entities.Curso;
+import com.curso.java.entities.Grade;
 import com.curso.java.repositories.AlunoRepository;
 import com.curso.java.repositories.CursoRepository;
+import com.curso.java.repositories.GradeRepository;
 
 @SpringBootApplication
 public class TesteDatabaseApplication implements CommandLineRunner {
@@ -21,6 +23,9 @@ public class TesteDatabaseApplication implements CommandLineRunner {
 	
 	@Autowired
 	private AlunoRepository alunoRepository;
+	
+	@Autowired
+	private GradeRepository gradeRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(TesteDatabaseApplication.class, args);
@@ -113,12 +118,17 @@ public class TesteDatabaseApplication implements CommandLineRunner {
 //		System.out.println("Curso by area e curso query nativa usando ?");
 //		cursosByAreaParamentrosQuery.forEach(curso -> System.out.println(curso));
 		
+		//ADICIONA DADOS PARA TESTE DE OneToMany e ManyToOne
 		Aluno aluno1 = new Aluno("Ana", curso1);
 		Aluno aluno2 = new Aluno("Ana2", curso1);
-		
 		alunoRepository.save(aluno1);
 		alunoRepository.save(aluno2);
-
+		
+		//ADICIONA DADOS PARA TESTE DE OneToOne
+		Grade grade1 = new Grade("Teste 1", aluno1);
+		Grade grade2 = new Grade("Teste 2", aluno2);
+		gradeRepository.save(grade1);
+		gradeRepository.save(grade2);
 	}
 
 }
