@@ -1,11 +1,15 @@
 package com.curso.java.entities;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @Table(name = "curso_faculdade")
@@ -20,6 +24,13 @@ public class Curso {
 	private String nome;
 
 	private String area;
+	
+	@CreationTimestamp
+	@Column(name = "data_criacao")
+	private LocalDateTime dataCriacao;
+	
+	@Column(name = "data_atualizacao")
+	private LocalDateTime dataAtualizacao;
 
 	public Curso() {
 	}
@@ -68,6 +79,22 @@ public class Curso {
 
 	public void setArea(String area) {
 		this.area = area;
+	}
+
+	public LocalDateTime getDataCriacao() {
+		return dataCriacao;
+	}
+
+	public void setDataCriacao(LocalDateTime dataCriacao) {
+		this.dataCriacao = dataCriacao;
+	}
+
+	public LocalDateTime getDataAtualizacao() {
+		return dataAtualizacao;
+	}
+
+	public void setDataAtualizacao(LocalDateTime dataAtualizacao) {
+		this.dataAtualizacao = dataAtualizacao;
 	}
 
 }

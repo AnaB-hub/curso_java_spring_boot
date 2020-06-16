@@ -37,9 +37,9 @@ public class TesteDatabaseApplication implements CommandLineRunner {
 		cursoRepository.save(curso5);
 
 		// Alteração
-		curso2.setId(2); // TODO Verificar o motivo de não estar permitindo salvar sem o ID
-		curso2.setNome("AGRONEGÓCIO");
-		cursoRepository.save(curso2);
+//		curso2.setId(2); // TODO Verificar o motivo de não estar permitindo salvar sem o ID
+//		curso2.setNome("AGRONEGÓCIO");
+//		cursoRepository.save(curso2);
 
 		// Listagem
 		List<Curso> cursos = cursoRepository.findAll();
