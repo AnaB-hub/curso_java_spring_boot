@@ -58,6 +58,11 @@ public class TesteDatabaseApplication implements CommandLineRunner{
 		Curso byIdFinal = byId.orElse(null);
 		System.out.println("Curso de ID 5: " + byIdFinal);
 		
+		// FindByNome
+		List<Curso> cursosByNome = cursoRepository.findByNome("ADS");
+		System.out.println("Curso by nome");
+		cursosByNome.forEach(curso -> System.out.println(curso));
+		
 	}
 
 }
