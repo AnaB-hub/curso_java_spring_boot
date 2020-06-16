@@ -2,12 +2,15 @@ package com.curso.java.entities;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.PostPersist;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
@@ -47,6 +50,9 @@ public class Curso {
 	// Campos que não precisam ser salvos no BD
 	@Transient
 	private BigDecimal valorCurso;
+
+	@OneToMany(mappedBy = "curso")
+	private List<Aluno> alunos = new ArrayList<Aluno>();
 
 	@PostPersist
 	private void aposPersistirDados() {
@@ -137,6 +143,14 @@ public class Curso {
 
 	public void setValorCurso(BigDecimal valorCurso) {
 		this.valorCurso = valorCurso;
+	}
+
+	public List<Aluno> getAlunos() {
+		return alunos;
+	}
+
+	public void setAlunos(List<Aluno> alunos) {
+		this.alunos = alunos;
 	}
 
 }
