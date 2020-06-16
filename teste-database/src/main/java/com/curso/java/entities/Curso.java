@@ -19,6 +19,8 @@ public class Curso {
 	@Column(name = "nome_curso")
 	private String nome;
 
+	private String area;
+
 	public Curso() {
 	}
 
@@ -30,6 +32,13 @@ public class Curso {
 		super();
 		this.id = id;
 		this.nome = nome;
+	}
+
+	public Curso(Integer id, String nome, String area) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.area = area;
 	}
 
 	public int getId() {
@@ -50,7 +59,15 @@ public class Curso {
 
 	@Override
 	public String toString() {
-		return "Curso [id=" + id + ", nome=" + nome + "]";
+		return "Curso [id=" + id + ", nome=" + nome + ", area=" + area + "]";
+	}
+
+	public String getArea() {
+		return area;
+	}
+
+	public void setArea(String area) {
+		this.area = area;
 	}
 
 }

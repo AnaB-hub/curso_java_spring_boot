@@ -23,11 +23,11 @@ public class TesteDatabaseApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Curso curso1 = new Curso(99, "Graduação ADS");
-		Curso curso2 = new Curso(6, "AGRO Graduação");
-		Curso curso3 = new Curso(9, "LETRAS");
-		Curso curso4 = new Curso(66, "BLA graduação");
-		Curso curso5 = new Curso(60, "LALALA");
+		Curso curso1 = new Curso(99, "Graduação ADS", "Exatas");
+		Curso curso2 = new Curso(6, "AGRO Graduação", "Exatas");
+		Curso curso3 = new Curso(9, "LETRAS", "Humanas");
+		Curso curso4 = new Curso(66, "BLA graduação", "Humanas");
+		Curso curso5 = new Curso(60, "LALALA", "Humanas");
 
 		// Cadastro
 		cursoRepository.save(curso1);
@@ -52,9 +52,9 @@ public class TesteDatabaseApplication implements CommandLineRunner {
 //		System.out.println("Qtde de registros após a exclusão: " + cursoRepository.count());
 
 		// FindById
-//		Optional<Curso> byId = cursoRepository.findById(5);
-//		Curso byIdFinal = byId.orElse(null);
-//		System.out.println("Curso de ID 5: " + byIdFinal);
+		Optional<Curso> byId = cursoRepository.findById(5);
+		Curso byIdFinal = byId.orElse(null);
+		System.out.println("Curso de ID 5: " + byIdFinal);
 
 		// FindByNome
 //		List<Curso> cursosByNome = cursoRepository.findByNome("ADS");
@@ -75,6 +75,16 @@ public class TesteDatabaseApplication implements CommandLineRunner {
 //		List<Curso> cursosByNomeLike = cursoRepository.findByNomeLikeIgnoreCase("%Graduação%");// IGNORA MAIUSCULAS E MINUSCULAS
 //		System.out.println("Curso by nome LIKE");
 //		cursosByNomeLike.forEach(curso -> System.out.println(curso));
+
+		// FindAll by query
+		List<Curso> cursosByQuery = cursoRepository.findAllQuery();
+		System.out.println("FindAll by query ");
+		cursosByQuery.forEach(curso -> System.out.println(curso));
+
+		// Find by area query nativa
+		List<String> cursosByAreaQuery = cursoRepository.findByArea();
+		System.out.println("Curso by query nome");
+		cursosByAreaQuery.forEach(curso -> System.out.println(curso));
 
 	}
 
