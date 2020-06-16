@@ -12,6 +12,8 @@ import javax.persistence.PostPersist;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -38,6 +40,8 @@ public class Curso {
 	@Column(name = "data_atualizacao")
 	private LocalDateTime dataAtualizacao;
 
+	@NotNull(message = "Não pode ser null")
+	@NotBlank(message = "Não pode ser vazio")
 	private String usuario;
 
 	// Campos que não precisam ser salvos no BD
