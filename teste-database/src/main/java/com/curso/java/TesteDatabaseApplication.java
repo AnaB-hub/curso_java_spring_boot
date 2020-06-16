@@ -81,10 +81,15 @@ public class TesteDatabaseApplication implements CommandLineRunner {
 		System.out.println("FindAll by query ");
 		cursosByQuery.forEach(curso -> System.out.println(curso));
 
-		// Find by area query nativa
+		// Find by area fixa query nativa
 		List<String> cursosByAreaQuery = cursoRepository.findByArea();
-		System.out.println("Curso by query nome");
+		System.out.println("Curso by area query nativa");
 		cursosByAreaQuery.forEach(curso -> System.out.println(curso));
+
+		// Find by area por paramentro - query nativa
+		List<String> cursosByAreaInformadaQuery = cursoRepository.findByAreaInformada("Exatas");
+		System.out.println("Curso by area informada query nativa");
+		cursosByAreaInformadaQuery.forEach(curso -> System.out.println(curso));
 
 	}
 
