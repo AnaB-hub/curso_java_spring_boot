@@ -8,7 +8,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.curso.java.entities.Aluno;
 import com.curso.java.entities.Curso;
+import com.curso.java.repositories.AlunoRepository;
 import com.curso.java.repositories.CursoRepository;
 
 @SpringBootApplication
@@ -16,6 +18,9 @@ public class TesteDatabaseApplication implements CommandLineRunner {
 
 	@Autowired
 	private CursoRepository cursoRepository;
+	
+	@Autowired
+	private AlunoRepository alunoRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(TesteDatabaseApplication.class, args);
@@ -23,7 +28,7 @@ public class TesteDatabaseApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Curso curso1 = new Curso(99, "Graduação ADS", "Exatas");
+		Curso curso1 = new Curso(1, "Graduação ADS", "Exatas");
 		Curso curso2 = new Curso(6, "AGRO Graduação", "Exatas");
 		Curso curso3 = new Curso(9, "LETRAS", "Humanas");
 		Curso curso4 = new Curso(66, "BLA graduação", "Humanas");
@@ -107,6 +112,12 @@ public class TesteDatabaseApplication implements CommandLineRunner {
 //		List<String> cursosByAreaParamentrosQuery = cursoRepository.findByAreaParametros("Humanas", "LETRAS");
 //		System.out.println("Curso by area e curso query nativa usando ?");
 //		cursosByAreaParamentrosQuery.forEach(curso -> System.out.println(curso));
+		
+		Aluno aluno1 = new Aluno("Ana", curso1);
+		Aluno aluno2 = new Aluno("Ana2", curso1);
+		
+		alunoRepository.save(aluno1);
+		alunoRepository.save(aluno2);
 
 	}
 

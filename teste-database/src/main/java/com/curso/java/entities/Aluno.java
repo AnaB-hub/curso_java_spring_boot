@@ -25,6 +25,16 @@ public class Aluno {
 	@JoinColumn(name = "curso_id")
 	private Curso curso;
 
+	public Aluno() {
+		
+	}
+	
+	public Aluno(String nome, Curso curso) {
+		super();
+		this.nome = nome;
+		this.curso = curso;
+	}
+
 	public Integer getId() {
 		return id;
 	}
