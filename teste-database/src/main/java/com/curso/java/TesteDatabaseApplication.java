@@ -1,7 +1,9 @@
 package com.curso.java;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -11,9 +13,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.curso.java.entities.Aluno;
 import com.curso.java.entities.Curso;
 import com.curso.java.entities.Grade;
+import com.curso.java.entities.Materia;
 import com.curso.java.repositories.AlunoRepository;
 import com.curso.java.repositories.CursoRepository;
 import com.curso.java.repositories.GradeRepository;
+import com.curso.java.repositories.MateriaRepository;
 
 @SpringBootApplication
 public class TesteDatabaseApplication implements CommandLineRunner {
@@ -26,6 +30,9 @@ public class TesteDatabaseApplication implements CommandLineRunner {
 	
 	@Autowired
 	private GradeRepository gradeRepository;
+	
+	@Autowired
+	private MateriaRepository materiaRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(TesteDatabaseApplication.class, args);
@@ -129,6 +136,16 @@ public class TesteDatabaseApplication implements CommandLineRunner {
 		Grade grade2 = new Grade("Teste 2", aluno2);
 		gradeRepository.save(grade1);
 		gradeRepository.save(grade2);
+		
+		//ADICIONA DADOS PARA TESTE ManyToMany
+		Set<Grade> grades1 = new HashSet<Grade>();
+		grades1.add(grade1);
+		Materia materia1 = new Materia("Prog", grades1);
+		materiaRepository.save(materia1);
+
+		Materia materia2 = new Materia("Desenho", grades1);
+		materiaRepository.save(materia2);
+		
 	}
 
 }

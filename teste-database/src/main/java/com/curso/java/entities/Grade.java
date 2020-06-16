@@ -1,5 +1,8 @@
 package com.curso.java.entities;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -7,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -24,8 +28,12 @@ public class Grade {
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "aluno_id", referencedColumnName = "id")
 	private Aluno aluno;
-	
-	public Grade() {}
+
+	@ManyToMany(mappedBy = "grades")
+	private Set<Materia> materias = new HashSet<Materia>();
+
+	public Grade() {
+	}
 
 	public Grade(String objetivo, Aluno aluno) {
 		super();
@@ -55,6 +63,14 @@ public class Grade {
 
 	public void setAluno(Aluno aluno) {
 		this.aluno = aluno;
+	}
+
+	public Set<Materia> getMaterias() {
+		return materias;
+	}
+
+	public void setMaterias(Set<Materia> materias) {
+		this.materias = materias;
 	}
 
 }
