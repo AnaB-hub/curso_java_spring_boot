@@ -72,9 +72,9 @@ public class TesteDatabaseApplication implements CommandLineRunner {
 //		cursosByNomeLike.forEach(curso -> System.out.println(curso));
 
 		// FindByNome LIKE IGNORE CASE
-		List<Curso> cursosByNomeLike = cursoRepository.findByNomeLikeIgnoreCase("%Graduação%");// IGNORA MAIUSCULAS E MINUSCULAS
-		System.out.println("Curso by nome LIKE");
-		cursosByNomeLike.forEach(curso -> System.out.println(curso));
+//		List<Curso> cursosByNomeLike = cursoRepository.findByNomeLikeIgnoreCase("%Graduação%");// IGNORA MAIUSCULAS E MINUSCULAS
+//		System.out.println("Curso by nome LIKE");
+//		cursosByNomeLike.forEach(curso -> System.out.println(curso));
 
 	}
 
