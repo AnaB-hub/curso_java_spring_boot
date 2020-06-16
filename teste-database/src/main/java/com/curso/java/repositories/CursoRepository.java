@@ -26,5 +26,11 @@ public interface CursoRepository extends JpaRepository<Curso, Integer> {
 	
 	@Query(value = "select nome_curso from curso_faculdade where area = :area", nativeQuery = true)
 	List<String> findByAreaInformada(@Param("area") String area);
+	
+	@Query(value = "select nome_curso from curso_faculdade where area = :area and nome_curso = :nome", nativeQuery = true)
+	List<String> findByAreaECurso(@Param("area") String area, @Param("nome") String curso);
+	
+	@Query(value = "select nome_curso from curso_faculdade where area = ?1 and nome_curso = ?2", nativeQuery = true)
+	List<String> findByAreaParametros(String area, String curso);
 
 }
