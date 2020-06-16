@@ -29,26 +29,31 @@ public class TesteDatabaseApplication implements CommandLineRunner{
 		Curso curso4 = new Curso(66, "BLA");
 		Curso curso5 = new Curso(60, "LALALA");
 		
+		// Cadastro
 		cursoRepository.save(curso1);
 		cursoRepository.save(curso2);
 		cursoRepository.save(curso3);
 		cursoRepository.save(curso4);
 		cursoRepository.save(curso5);
 		
+		// Alteração
 		curso2.setId(2); //TODO Verificar o motivo de não estar permitindo salvar sem o ID
 		curso2.setNome("AGRONEGÓCIO");
 		cursoRepository.save(curso2);
 		
+		// Listagem
 		List<Curso> cursos =  cursoRepository.findAll();
 		cursos.forEach(curso -> System.out.println(curso));
 		
 		System.out.println("Qtde de registros: " + cursoRepository.count());
 		
+		// Exclusão
 		cursoRepository.deleteById(3);
 		cursoRepository.delete(curso2); //Exclusão pela entidade
 		
 		System.out.println("Qtde de registros após a exclusão: " + cursoRepository.count());
 		
+		// FindById
 		Optional<Curso> byId = cursoRepository.findById(5);
 		Curso byIdFinal = byId.orElse(null);
 		System.out.println("Curso de ID 5: " + byIdFinal);
