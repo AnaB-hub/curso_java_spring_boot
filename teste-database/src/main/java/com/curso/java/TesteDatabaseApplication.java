@@ -37,11 +37,11 @@ public class TesteDatabaseApplication implements CommandLineRunner {
 		cursoRepository.save(curso5);
 		
 		// Teste de data de atualização
-		Thread.sleep(3000);
-		Optional<Curso> cursoAlterar = cursoRepository.findById(5);
-		Curso cursoAlterarFinal = cursoAlterar.orElse(null);
-		cursoAlterarFinal.setNome("TESTE ALTERAÇÃO");
-		cursoRepository.save(cursoAlterarFinal);
+//		Thread.sleep(3000);
+//		Optional<Curso> cursoAlterar = cursoRepository.findById(5);
+//		Curso cursoAlterarFinal = cursoAlterar.orElse(null);
+//		cursoAlterarFinal.setNome("TESTE ALTERAÇÃO");
+//		cursoRepository.save(cursoAlterarFinal);
 
 		// Alteração
 //		curso2.setId(2); // TODO Verificar o motivo de não estar permitindo salvar sem o ID
