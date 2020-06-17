@@ -6,11 +6,29 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.math.BigDecimal;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestInstance.Lifecycle;
 
 import com.curso.api.entities.Curso;
 
+@TestInstance(Lifecycle.PER_CLASS)
 class CursoTeste {
+	
+	Curso c;
+
+	@BeforeAll
+	void iniciando() {
+		System.out.println("Iniciando a classe de teste");
+	}
+
+	@BeforeEach // será executado antes de cada método de teste
+	void antesDoCadastro() {
+		System.out.println("Testando um dos métodos");
+		c = new Curso(); // Ao criar aqui, evita repetição de código
+	}
 
 	@Test
 	void test() {
@@ -19,25 +37,21 @@ class CursoTeste {
 
 	@Test
 	void testaCursoNaoVazio() {
-		Curso c = new Curso();
 		assertNotNull(c); // Verifica se não é null
 	}
 
 	@Test
 	void valorCursoNaoNulo() {
-		Curso c = new Curso();
 		assertNotNull(c.getValorCurso());
 	}
 
 	@Test
 	void testeNovoCursoValorZero() {
-		Curso c = new Curso();
 		Assertions.assertEquals(new BigDecimal(0), c.getValorCurso());
 	}
 
 	@Test
 	void testaNovoCursoSemAlunos() {
-		Curso c = new Curso();
 		assertTrue(c.getAlunos().isEmpty());
 	}
 
