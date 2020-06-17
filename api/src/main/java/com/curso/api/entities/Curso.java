@@ -62,7 +62,7 @@ public class Curso implements Serializable {
 	private BigDecimal valorCurso;
 
 	@OneToMany(mappedBy = "curso")
-	private List<Aluno> alunos = new ArrayList<Aluno>();
+	private List<Aluno> alunos = new ArrayList<>();
 
 	@PostPersist
 	private void aposPersistirDados() {
