@@ -75,6 +75,7 @@ public class Curso implements Serializable {
 	}
 
 	public Curso() {
+		this.valorCurso = new BigDecimal(0);
 	}
 
 	public Curso(String nome) {
