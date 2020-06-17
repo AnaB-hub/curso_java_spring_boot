@@ -36,4 +36,14 @@ public class CursoServiceImpl implements CursoService {
 	public List<Curso> findByNome(String valor) {
 		return cursoRepository.findByNomeContaining(valor);
 	}
+
+	@Override
+	public void update(Curso curso) {
+		Optional<Curso> cursoAtual = cursoRepository.findById(curso.getId());
+		Curso atual = cursoAtual.orElse(null);
+		atual.setNome(curso.getNome());
+		atual.setArea(curso.getArea());
+		cursoRepository.save(atual);
+		
+	}
 }

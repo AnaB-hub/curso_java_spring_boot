@@ -35,7 +35,6 @@ public class Curso implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(nullable = true)
 	private Integer id;
 
 	@Column(name = "nome_curso")
