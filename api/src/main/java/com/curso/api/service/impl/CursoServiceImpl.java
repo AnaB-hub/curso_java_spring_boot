@@ -23,6 +23,7 @@ public class CursoServiceImpl implements CursoService {
 
 	@Override
 	public Curso save(Curso curso) {
+		curso.setId(0); //TODO id mockado, porém ao salvar, recebe id sequencial normalmente
 		return cursoRepository.save(curso);
 	}
 

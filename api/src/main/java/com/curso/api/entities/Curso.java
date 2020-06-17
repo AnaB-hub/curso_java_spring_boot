@@ -77,19 +77,17 @@ public class Curso implements Serializable {
 		this.valorCurso = new BigDecimal(0);
 	}
 
-	public Curso(String nome) {
-		this.nome = nome;
-	}
-
-	public Curso(Integer id, String nome) {
-		super();
-		this.id = id;
-		this.nome = nome;
-	}
-
 	public Curso(Integer id, String nome, String area) {
 		super();
 		this.id = id;
+		this.nome = nome;
+		this.area = area;
+	}
+
+	public Curso(String nome, String area) {
+		super();
+		this.id = 0; // TODO id mockado para ser usado ao iniciar dados de teste, porém ao salvar,
+						// recebe id sequencial normalmente
 		this.nome = nome;
 		this.area = area;
 	}
