@@ -1,0 +1,5 @@
+-- Execute esse arquivo em seu banco de dados postgresql para ter dados de teste, ao executar com o perfil DEV
+
+insert into curso (nome_curso, area, usuario) values ('Graduação ADS', 'Exatas', 'ADMIN');
+insert into curso (nome_curso, area, usuario) values ('AGRO Graduação', 'Exatas', 'ADMIN');
+insert into curso (nome_curso, area, usuario) values ('LETRAS', 'Humanas', 'ADMIN');
