@@ -1,0 +1,5 @@
+drop table aluno cascade;
+drop table curso cascade;
+drop table grade cascade;
+drop table grade_materia cascade;
+drop table materia cascade;
