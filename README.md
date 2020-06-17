@@ -18,4 +18,5 @@ A master contém os códigos de todas as branchs, por ser a versão estável.
 * Importe em sua IDE;
 * Escolha um perfil: em "application.properties", no atributo "spring.profiles.active", é possível indicar o perfil que deseja executar, sendo eles "test" ou "dev".
 Para utilizar o perfil de teste, é necessário modificar o atributo "spring.datasource.url" em "application-test.properties", pois estou indicando o caminho que deve-se percorrer para criar o arquivo responsável por armazenar os dados do banco H2.
-Para utilizar o perfil de dev, é necessário ter instalado o banco de dados postgresql em sua máquina. Caso deseje ter dados de teste ao iniciar, pegue o script contido dentro de Dados de teste - perfil DEV.txt, em resources e execute.
+Para utilizar o perfil de dev, é necessário ter instalado o banco de dados postgresql em sua máquina. Caso deseje ter dados de teste ao iniciar, copie o script contido dentro de "Dados de teste - perfil DEV.txt", em resources e execute.
+* O sistema será executado.
