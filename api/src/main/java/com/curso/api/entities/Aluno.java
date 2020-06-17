@@ -1,5 +1,7 @@
 package com.curso.api.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +13,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "aluno")
-public class Aluno {
+public class Aluno implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

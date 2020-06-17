@@ -1,5 +1,6 @@
 package com.curso.api.entities;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,7 +16,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "materia")
-public class Materia {
+public class Materia implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,16 +31,13 @@ public class Materia {
 	private String nome;
 
 	@ManyToMany
-	@JoinTable(name = "grade_materia", 
-			   joinColumns = {
-					   @JoinColumn(name = "materia_id", referencedColumnName = "id")
-			   }, 
-			   inverseJoinColumns = {
-					@JoinColumn(name = "grade_id", referencedColumnName = "id") 
-			   })
+	@JoinTable(name = "grade_materia", joinColumns = {
+			@JoinColumn(name = "materia_id", referencedColumnName = "id") }, inverseJoinColumns = {
+					@JoinColumn(name = "grade_id", referencedColumnName = "id") })
 	private Set<Grade> grades = new HashSet<Grade>();
-	
-	public Materia() {}
+
+	public Materia() {
+	}
 
 	public Materia(String nome, Set<Grade> grades) {
 		super();
