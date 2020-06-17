@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.math.BigDecimal;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -25,14 +27,25 @@ class CursoTeste {
 	}
 
 	@BeforeEach // será executado antes de cada método de teste
-	void antesDoCadastro() {
+	void antesDeCadaUm() {
 		System.out.println("Testando um dos métodos");
 		c = new Curso(); // Ao criar aqui, evita repetição de código
 	}
+	
+	@AfterAll
+	void finalizando() {
+		System.out.println("Finalizando a classe de teste");
+	}
+	
+	@AfterEach
+	void depoisDeCadaUm() {
+		System.out.println("Nome do curso: " + c.getNome());
+	}
 
 	@Test
-	void test() {
-//		fail("Not yet implemented");
+	void testaSetaNome() {
+		c.setNome("Curso de teste");
+		assertNotNull(c.getNome());
 	}
 
 	@Test
