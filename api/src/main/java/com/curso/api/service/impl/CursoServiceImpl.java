@@ -31,4 +31,9 @@ public class CursoServiceImpl implements CursoService {
 		Optional<Curso> curso = cursoRepository.findById(id);
 		return curso.orElse(null);
 	}
+
+	@Override
+	public List<Curso> findByNome(String valor) {
+		return cursoRepository.findByNomeContaining(valor);
+	}
 }

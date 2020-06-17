@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.curso.api.entities.Curso;
@@ -47,6 +48,12 @@ public class CursoResource {
 	public ResponseEntity<Curso> findById(@PathVariable Integer id) {
 		Curso curso = cursoService.findById(id);
 		return ResponseEntity.ok().body(curso);
+	}
+	
+	@GetMapping("/nome") // Exemplo: http://localhost:8080/curso/nome?valor=graduação
+	public ResponseEntity<List<Curso>> findByNome(@RequestParam String valor) {
+		List<Curso> cursos = cursoService.findByNome(valor);
+		return ResponseEntity.ok().body(cursos);
 	}
 
 }
